@@ -10,3 +10,6 @@ According to the lab requirements, the User will be able to:
 The result(Video): 
 
 // also check my insta @ioiiiomio(full process)
+
+Upd: 
+1. I put all my mp3 files in the raw folder. Not in assets(I'm sure there's some minor difference but im used to using raw)
