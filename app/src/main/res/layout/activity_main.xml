@@ -26,6 +26,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:text="Music" />
 
         <Button
@@ -33,13 +34,15 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:text="Share" />
 
         <Button
             android:id="@+id/btnBroadcast"
-            android:layout_width="0dp"
+            android:layout_width="12dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:text="Broadcast" />
 
         <Button
@@ -47,6 +50,7 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="1dp"
             android:text="Events" />
     </LinearLayout>
 </RelativeLayout>

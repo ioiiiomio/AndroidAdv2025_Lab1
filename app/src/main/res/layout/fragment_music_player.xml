@@ -46,20 +46,31 @@
             android:id="@+id/prevButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="Prev" />
 
         <Button
             android:id="@+id/playButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play/Pause"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp" />
+            android:text="Play"
+            android:padding="10dp"
+            />
+
 
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Next" />
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal" />
+
     </LinearLayout>
 </LinearLayout>
