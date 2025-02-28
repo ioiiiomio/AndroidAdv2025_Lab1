@@ -1,4 +1,5 @@
 # AndroidAdv2025_Lab1
+
 This is MyMusic app, which is basically a "Social platform" to share your music with friends. 
 According to the lab requirements, the User will be able to:
 1) Share their music with other people Via Facebook's API on Instagram stories;
@@ -7,3 +8,5 @@ According to the lab requirements, the User will be able to:
 4) The app can check the user’s calendar events and suggest music playlists based on upcoming events(like, if there is a GYM activity, the app will suggest Workout playlist)
 
 The result(Video): 
+
+// also check my insta @ioiiiomio(full process)
