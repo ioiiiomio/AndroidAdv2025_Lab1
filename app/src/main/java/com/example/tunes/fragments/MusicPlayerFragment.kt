@@ -1,7 +1,6 @@
 package com.example.tunes.fragments
 
 import android.content.Intent
-import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,17 +12,15 @@ import androidx.fragment.app.Fragment
 import com.example.tunes.MusicService
 import com.example.tunes.R
 
-// Data class to store track information
 data class Track(val name: String, val artist: String, val fileResId: Int, val albumArt: Int)
 
 class MusicPlayerFragment : Fragment() {
-    private var mediaPlayer: MediaPlayer? = null
     private var currentIndex = 0
 
     private val tracks = listOf(
-        Track("Song One", "Artist A", R.raw.song1, R.drawable.cover_1),
-        Track("Song Two", "Artist B", R.raw.song2, R.drawable.cover_2),
-        Track("Song Three", "Artist C", R.raw.song3, R.drawable.cover_3)
+        Track("Think", "Kaleida", R.raw.song1, R.drawable.cover_1),
+        Track("Nervous", "Crying City", R.raw.song2, R.drawable.cover_2),
+        Track("Harvest Sky", "Oklou", R.raw.song3, R.drawable.cover_3)
     )
 
     override fun onCreateView(
@@ -43,45 +40,37 @@ class MusicPlayerFragment : Fragment() {
         loadTrack(currentIndex)
 
         playButton.setOnClickListener {
-            val startServiceIntent = Intent(requireContext(), MusicService::class.java)
-            requireContext().startService(startServiceIntent)
-
-            if (mediaPlayer?.isPlaying == true) {
-                mediaPlayer?.pause()
-            } else {
-                mediaPlayer?.start()
-            }
+            sendMusicCommand("PLAY", tracks[currentIndex].fileResId)
         }
 
         stopButton.setOnClickListener {
-            val stopServiceIntent = Intent(requireContext(), MusicService::class.java)
-            requireContext().stopService(stopServiceIntent)
-
-            mediaPlayer?.pause()
-            mediaPlayer?.seekTo(0)
+            sendMusicCommand("STOP")
         }
 
         nextButton.setOnClickListener {
             currentIndex = (currentIndex + 1) % tracks.size
             loadTrack(currentIndex)
-            mediaPlayer?.start()
+            sendMusicCommand("PLAY", tracks[currentIndex].fileResId)
         }
 
         prevButton.setOnClickListener {
             currentIndex = if (currentIndex - 1 < 0) tracks.size - 1 else currentIndex - 1
             loadTrack(currentIndex)
-            mediaPlayer?.start()
+            sendMusicCommand("PLAY", tracks[currentIndex].fileResId)
         }
+    }
+
+    private fun sendMusicCommand(action: String, trackResId: Int? = null) {
+        val intent = Intent(requireContext(), MusicService::class.java).apply {
+            this.action = action
+            trackResId?.let { putExtra("TRACK_ID", it) }
+        }
+        requireContext().startService(intent)
     }
 
     private fun loadTrack(index: Int) {
         val track = tracks[index]
 
-        // Release old media player instance before creating a new one
-        mediaPlayer?.release()
-        mediaPlayer = MediaPlayer.create(requireContext(), track.fileResId)
-
-        // Update UI elements
         val albumArtView: ImageView = requireView().findViewById(R.id.albumArt)
         val trackNameView: TextView = requireView().findViewById(R.id.trackName)
         val artistNameView: TextView = requireView().findViewById(R.id.artistName)
@@ -89,11 +78,5 @@ class MusicPlayerFragment : Fragment() {
         albumArtView.setImageResource(track.albumArt)
         trackNameView.text = track.name
         artistNameView.text = track.artist
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        mediaPlayer?.release()
-        mediaPlayer = null
     }
 }
