@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/musicPlayerFragment">
+
+    <fragment
+        android:id="@+id/musicPlayerFragment"
+        android:name="com.example.tunes.fragments.MusicPlayerFragment"
+        android:label="Music Player"
+        tools:layout="@layout/fragment_music_player" />
+
+    <fragment
+        android:id="@+id/shareFragment"
+        android:name="com.example.musicplayer.fragments.ShareFragment"
+        android:label="Share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/broadcastFragment"
+        android:name="com.example.musicplayer.fragments.BroadcastFragment"
+        android:label="Broadcast Receiver"
+        tools:layout="@layout/fragment_broadcast" />
+
+    <fragment
+        android:id="@+id/eventsFragment"
+        android:name="com.example.musicplayer.fragments.EventsFragment"
+        android:label="Calendar Events"
+        tools:layout="@layout/fragment_events" />
+</navigation>
