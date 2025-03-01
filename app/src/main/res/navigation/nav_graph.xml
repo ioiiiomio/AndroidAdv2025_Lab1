@@ -12,19 +12,19 @@
 
     <fragment
         android:id="@+id/shareFragment"
-        android:name="com.example.musicplayer.fragments.ShareFragment"
+        android:name="com.example.tunes.fragments.ShareFragment"
         android:label="Share"
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/broadcastFragment"
-        android:name="com.example.musicplayer.fragments.BroadcastFragment"
-        android:label="Broadcast Receiver"
-        tools:layout="@layout/fragment_broadcast" />
+        android:id="@+id/airplaneModeFragment"
+        android:name="com.example.tunes.fragments.AirplaneModeFragment"
+        android:label="Airplane Mode"
+        tools:layout="@layout/fragment_airplane_mode" />
 
     <fragment
         android:id="@+id/eventsFragment"
-        android:name="com.example.musicplayer.fragments.EventsFragment"
+        android:name="com.example.tunes.fragments.EventsFragment"
         android:label="Calendar Events"
         tools:layout="@layout/fragment_events" />
 </navigation>

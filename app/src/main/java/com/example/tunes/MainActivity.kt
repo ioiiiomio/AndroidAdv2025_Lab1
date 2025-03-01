@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btnBroadcast).setOnClickListener {
-            findNavController(R.id.nav_host_fragment).navigate(R.id.broadcastFragment)
         }
 
         findViewById<Button>(R.id.btnEvents).setOnClickListener {
