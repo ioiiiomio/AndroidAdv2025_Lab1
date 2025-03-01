@@ -20,8 +20,10 @@ class MusicPlayerFragment : Fragment() {
     private val tracks = listOf(
         Track("Think", "Kaleida", R.raw.song1, R.drawable.cover_1),
         Track("Nervous", "Crying City", R.raw.song2, R.drawable.cover_2),
-        Track("Harvest Sky", "Oklou", R.raw.song3, R.drawable.cover_3)
-    )
+        Track("Harvest Sky", "Oklou", R.raw.song3, R.drawable.cover_3),
+        Track(name = "Obstacles", artist = "Syd Matters", R.raw.song5, R.drawable.cover_4),
+        Track(name = "Can't let go, Juno", artist = "Kishi Bashi", R.raw.song4, R.drawable.cover_5),
+        )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?

@@ -17,14 +17,16 @@ class MusicService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        startForeground(1, createNotification())  // Ensure foreground service starts first
+
         val action = intent?.action
 
         when (action) {
             "PLAY" -> {
-                val trackResId = intent.getIntExtra("TRACK_ID", currentTrackResId) // Get track ID
+                val trackResId = intent.getIntExtra("TRACK_ID", currentTrackResId)
                 if (trackResId != currentTrackResId) {
                     currentTrackResId = trackResId
-                    mediaPlayer?.release()  // Release old player
+                    mediaPlayer?.release()
                     mediaPlayer = MediaPlayer.create(this, currentTrackResId)
                 }
 
@@ -43,7 +45,6 @@ class MusicService : Service() {
             }
         }
 
-        startForeground(1, createNotification())
         return START_STICKY
     }
 
