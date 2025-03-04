@@ -10,12 +10,16 @@ activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 fragmentKtx = "1.8.6"
 appcompat = "1.7.0"
+media = "1.7.0"
+mediaVersion = "1.6.0"
 navigationFragment = "2.8.8"
 navigationFragmentKtx = "2.8.8"
 navigationUiKtx = "2.8.8"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-media = { module = "androidx.media:media", version.ref = "media" }
+androidx-media-v160 = { module = "androidx.media:media", version.ref = "mediaVersion" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigationUiKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
