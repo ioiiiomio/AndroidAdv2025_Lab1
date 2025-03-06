@@ -7,7 +7,7 @@ According to the lab requirements, the User will be able to:
 3) When an AirPlane mode is turned on, it will notify user that the only oflline music will play
 4) The app can check the user’s calendar events and suggest music playlists based on upcoming events(like, if there is a GYM activity, the app will suggest Workout playlist)
 
-The result(Video): https://youtu.be/0m_5WwRBbEY
+The result(Video): https://disk.yandex.ru/i/6v4WOpRqT2APuA
 
 // also check my insta @ioiiiomio(full process kinda)
 
